@@ -2,9 +2,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import repositoryReducer from './slices/repositorySlice';
 
 const store = configureStore({
-    reducer: {
-        repository: repositoryReducer,
-    },
+  reducer: {
+    repository: repositoryReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;

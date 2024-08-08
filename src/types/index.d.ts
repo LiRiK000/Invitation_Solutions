@@ -1,20 +1,25 @@
 export interface Repository {
-    id: number;
+  id: number;
+  name: string;
+  language: string;
+  forks_count: number;
+  stargazers_count: number;
+  updated_at: string;
+  description: string;
+  license: {
     name: string;
-    language: string;
-    forks_count: number;
-    stargazers_count: number;
-    updated_at: string;
-    description: string;
-    license: {
-        name: string;
-    } | null;
+  } | null;
 }
 
 export interface RepositoryState {
-    repositories: Repository[];
-    status: 'idle' | 'loading' | 'succeeded' | 'failed';
-    error: string | null;
+  repositories: Repository[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+  searchQuery: string;
+}
+
+export interface HeaderProps {
+  onSearch: (searchText: string) => void;
 }
 
 export type Order = 'asc' | 'desc';

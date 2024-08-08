@@ -1,20 +1,24 @@
 .header {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    background-color: #00838f;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #00838f;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 
-    label {
-        color: #ffffff !important;
-    }
+  label {
+    color: #ffffff !important;
+    font-size: 22px;
+  }
 
-    input {
-        width: 70vw;
-    }
+  input {
+    width: 70vw;
+    color: #fff !important;
+    font-size: 18px;
+  }
 }

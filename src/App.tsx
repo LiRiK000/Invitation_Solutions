@@ -1,28 +1,19 @@
 import './App.css';
 
 import { Header } from './components/Header/Header';
+import { Hero } from './components/Hero/Hero';
 import { TableComponent } from './components/Table/Table';
+import { useState } from 'react';
 
 function App() {
-    return (
-        <>
-            <Header />
-            <TableComponent />
-            {/* <div
-                style={{
-                    marginTop: '60px',
-                    fontSize: '24px',
-                    fontWeight: 'normal',
-                    textAlign: 'center',
-                    letterSpacing: '0.1px',
-                    padding: '20px',
-                    color: '4f4f4f',
-                }}
-            >
-                Добро пожаловать!
-            </div> */}
-        </>
-    );
+  const [searchText, setSearchText] = useState('');
+
+  return (
+    <>
+      <Header onSearch={setSearchText} />
+      {searchText ? <TableComponent searchText={searchText} /> : <Hero />}
+    </>
+  );
 }
 
 export default App;
