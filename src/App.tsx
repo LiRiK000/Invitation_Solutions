@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <Header onSearch={setSearchText} />
-      {searchText ? <TableComponent searchText={searchText} /> : <Hero />}
+      <main>
+        {searchText ? <TableComponent searchText={searchText} /> : <Hero />}
+      </main>
     </>
   );
 }

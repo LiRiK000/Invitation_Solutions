@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  position: relative;
+}
+.tableContainer {
+  margin-top: 60px;
+  max-width: 60vw !important;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.progressStatusContainer {
+  margin-top: 60px;
+  height: 85dvh;
+  margin: 0 auto;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 0.1px;
+  padding: 20px;
+  color: #4f4f4f;
+}
+.tableRow {
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background-color: #f0f0f0;
+    transition-duration: 300ms;
+  }
+}
+.pagination {
+  z-index: 1001;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
