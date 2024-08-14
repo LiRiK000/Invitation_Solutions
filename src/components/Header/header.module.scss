@@ -10,15 +10,18 @@
   gap: 30px;
   align-items: center;
   justify-content: center;
+  padding: 25px;
 
   label {
-    color: #ffffff !important;
+    color: #000 !important;
     font-size: 22px;
   }
 
   input {
+    border-radius: 5px;
     width: 70vw;
-    color: #fff !important;
+    color: #000 !important;
+    background-color: #fff;
     font-size: 18px;
   }
   button::hover {

@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# GitHub Repository Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application that allows users to search for GitHub repositories using the GitHub REST API. The application displays search results in a sortable and paginated table. By selecting a row in the table, users can view detailed information about the chosen repository.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Search**: Users can search for repositories by entering a query.
+- **Table View**: The search results are displayed in a table with the following columns:
+  - Repository Name
+  - Language
+  - Forks Count
+  - Stars Count
+  - Last Updated Date
+- **Details View**: Clicking on a table row displays the details of the selected repository, including:
+  - Repository Name
+  - Description
+  - License Information
+- **Sorting**: Users can sort the table by the number of stars, forks count, or last updated date in both ascending and descending order.
+- **Pagination**: The table supports pagination to navigate through search results.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: UI development.
+- **TypeScript**: Type-safe JavaScript.
+- **Redux Toolkit**: State management and API data fetching.
+- **MUI (Material-UI)**: UI component library.
+- **Sass**: For styling with CSS Modules.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js and pnpm installed on your machine.
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/LiRiK000/Invitation_Solutions
+   cd Invitation_Solutions
+   ```
+2. **Install dependencies**:
+
+```
+  pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3.  **Run the application**:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+  pnpm dev
+```
+
+4.  **Open the application**:
+
+_Open http://localhost:5173 view it in the browser._
+
+**API Integration**:
+
+_The application uses the GitHub REST API to fetch repository data based on the user's search query. The API calls are managed through Redux Toolkit's createAsyncThunk to handle loading states and data fetching._
+
+**Feel free to fork and contribute to this project. Any feedback is welcome!**

@@ -1,12 +1,75 @@
 .detailView {
   position: fixed;
-  top: 60px;
+  top: 100px;
   right: 0;
   width: 35vw;
   min-height: 100vh;
   max-height: 100%;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f2f2f2;
   box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .metadata {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .languageBadgeNotDef {
+      background-color: red;
+      color: whitesmoke;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      margin-right: 15px;
+    }
+
+    .languageBadge {
+      background-color: #007acc;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      margin-right: 15px;
+    }
+
+    .stars {
+      display: flex;
+      align-items: center;
+      font-size: 1em;
+      color: #666;
+
+      .starIcon {
+        color: gold;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+
+    .topicChip {
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.85em;
+    }
+  }
+
+  .license {
+    font-size: 0.9em;
+    color: #666;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Repository } from '../../types';
+import StarIcon from '@mui/icons-material/Star';
 import classes from './Details.module.scss';
 
 interface DetailViewProps {
@@ -7,28 +8,40 @@ interface DetailViewProps {
 }
 
 export const DetailView: React.FC<DetailViewProps> = ({ repository }) => {
+  if (!repository) {
+    return (
+      <div
+        className={classes.detailView}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <p className={classes.license}>Выберете репозиторий</p>
+      </div>
+    );
+  }
+
+  const { name, language, stargazers_count, license } = repository;
+
   return (
     <div className={classes.detailView}>
-      {repository ? (
-        <>
-          <h2>Детали репозитория</h2>
-          <p>
-            <strong>Название:</strong> {repository.name}
-          </p>
-          <p>
-            <strong>Описание:</strong>{' '}
-            {repository.description || 'Описание отсутствует'}
-          </p>
-          <p>
-            <strong>Язык:</strong> {repository.language || 'N/A'}
-          </p>
-          <p>
-            <strong>Лицензия:</strong> {repository.license?.name || 'N/A'}
-          </p>
-        </>
-      ) : (
-        <p>Репозиторий не выбран</p>
-      )}
+      <h2 className={classes.title}>{name}</h2>
+      <div className={classes.metadata}>
+        {language ? (
+          <span className={classes.languageBadge}>{language}</span>
+        ) : (
+          <span className={classes.languageBadgeNotDef}>not defined</span>
+        )}
+        <span className={classes.stars}>
+          <StarIcon className={classes.starIcon} />
+          {stargazers_count.toLocaleString()}{' '}
+        </span>
+      </div>
+      <div className={classes.license}>
+        {license ? license.name : 'No license information'}
+      </div>
     </div>
   );
 };
