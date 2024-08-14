@@ -39,6 +39,12 @@ export const TableComponent = React.memo(
       }
     }, [status, dispatch, searchText]);
 
+    /*
+     * A callback function that handles sorting the table data based on a selected property.
+     *
+     * @param property - The property of the Repository object to sort by.
+     * @returns {void}
+     */
     const handleRequestSort = useCallback(
       (property: keyof Repository) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -60,6 +66,14 @@ export const TableComponent = React.memo(
       []
     );
 
+    /*
+     * Sorts the repositories array based on the selected property and order.
+     *
+     * @param repositories - The array of repositories to sort.
+     * @param orderBy - The property of the Repository object to sort by.
+     * @param order - The order to sort the repositories ('asc' for ascending, 'desc' for descending).
+     * @returns The sorted repositories array.
+     */
     const sortedRepositories = repositories.slice().sort((a, b) => {
       if (orderBy === 'stargazers_count' || orderBy === 'forks_count') {
         return order === 'asc'
